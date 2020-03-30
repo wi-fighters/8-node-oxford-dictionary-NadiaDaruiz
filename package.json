@@ -1,0 +1,23 @@
+{
+  "name": "8-node-oxford-dictionary-nadiadaruiz",
+  "version": "1.0.0",
+  "description": "### OxFord Dictionary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wi-fighters/8-node-oxford-dictionary-NadiaDaruiz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wi-fighters/8-node-oxford-dictionary-NadiaDaruiz/issues"
+  },
+  "homepage": "https://github.com/wi-fighters/8-node-oxford-dictionary-NadiaDaruiz#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "devDependencies": {}
+}
