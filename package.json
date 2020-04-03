@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "### OxFord Dictionary",
   "main": "index.js",
+  "bin": {
+    "meaning": "index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "index.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,9 @@
   },
   "homepage": "https://github.com/wi-fighters/8-node-oxford-dictionary-NadiaDaruiz#readme",
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "chalk": "^3.0.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {}
 }

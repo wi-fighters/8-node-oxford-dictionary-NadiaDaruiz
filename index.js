@@ -1,8 +1,10 @@
-const axios = require('axios')
-
+#!/usr/bin/env node
+require('dotenv').config()
+const chalk = require('chalk');
+const axios = require('axios');
 const args = process.argv.slice(2);
 let [word] = args;
-let upperCase = word.toUpperCase()
+let upperCase = chalk.greenBright(word.toUpperCase())
 
 
 axios(`https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${word}`,
@@ -10,19 +12,19 @@ axios(`https://od-api.oxforddictionaries.com/api/v2/entries/en-us/${word}`,
         // the method by default is GET so you can put it  or not
         method: 'GET',
         headers: {
-            app_id: 'c723d5a8',
-            app_key: 'a50914880175d24f167e5b26a992f76a'
+            app_id: process.env.ID,
+            app_key: process.env.KEY
         }
     }).then(res => {
         let lexicalEntries = res.data.results[0].lexicalEntries[0];
         let etymologies = lexicalEntries.entries[0].etymologies;
         let definitions = lexicalEntries.entries[0].senses;
 
-        console.log(`${upperCase} is a ${lexicalEntries.lexicalCategory.text} \nEtymology: ${etymologies} \nDefinition: `)
+        console.log(`${upperCase} is a ${lexicalEntries.lexicalCategory.text} \nEtymology:${etymologies} \nDefinition: `)
         definitions.map((def, i) => {
             console.log(`${i + 1}. ${def.definitions}`)
         })
-        console.log(`Provided by: ${res.data.metadata.provider}`)
+        console.log(chalk.greenBright('Provided by:') + `${res.data.metadata.provider}`)
     }).catch(err => console.log(err))
 
 
